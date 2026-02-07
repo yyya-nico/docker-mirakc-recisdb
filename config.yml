@@ -3,6 +3,72 @@ server:
     - http: 0.0.0.0:40772
 epg:
   cache-dir: /var/lib/mirakc/epg
+timeshift:
+  recorders:
+    gr011:
+      service-id: 3270603088
+      ts-file: /var/lib/mirakc/recording/timeshift/gr011.timeshift.m2ts
+      data-file: /var/lib/mirakc/recording/timeshift/gr011.timeshift.json
+      num-chunks: 1394
+      uses:
+        tuner: 'PLEX PX-MLT8PE #1'
+        channel-type: GR
+        channel: T21
+    gr021:
+      service-id: 3270503080
+      ts-file: /var/lib/mirakc/recording/timeshift/gr021.timeshift.m2ts
+      data-file: /var/lib/mirakc/recording/timeshift/gr021.timeshift.json
+      num-chunks: 1394
+      uses:
+        tuner: 'PLEX PX-MLT8PE #2'
+        channel-type: GR
+        channel: T13
+    gr031:
+      service-id: 3222433792
+      ts-file: /var/lib/mirakc/recording/timeshift/gr031.timeshift.m2ts
+      data-file: /var/lib/mirakc/recording/timeshift/gr031.timeshift.json
+      num-chunks: 1394
+      uses:
+        tuner: 'PLEX PX-MLT8PE #3'
+        channel-type: GR
+        channel: T20
+    gr041:
+      service-id: 3270903112
+      ts-file: /var/lib/mirakc/recording/timeshift/gr041.timeshift.m2ts
+      data-file: /var/lib/mirakc/recording/timeshift/gr041.timeshift.json
+      num-chunks: 1394
+      uses:
+        tuner: 'PLEX PX-MLT8PE #4'
+        channel-type: GR
+        channel: T19
+    gr051:
+      service-id: 3270703096
+      ts-file: /var/lib/mirakc/recording/timeshift/gr051.timeshift.m2ts
+      data-file: /var/lib/mirakc/recording/timeshift/gr051.timeshift.json
+      num-chunks: 1394
+      uses:
+        tuner: 'PLEX PX-MLT8PE #5'
+        channel-type: GR
+        channel: T18
+    gr061:
+      service-id: 3270803104
+      ts-file: /var/lib/mirakc/recording/timeshift/gr061.timeshift.m2ts
+      data-file: /var/lib/mirakc/recording/timeshift/gr061.timeshift.json
+      num-chunks: 1394
+      uses:
+        tuner: 'PLEX PX-MLT8PE #6'
+        channel-type: GR
+        channel: T22
+    gr101:
+      service-id: 3223033840
+      ts-file: /var/lib/mirakc/recording/timeshift/gr101.timeshift.m2ts
+      data-file: /var/lib/mirakc/recording/timeshift/gr101.timeshift.json
+      num-chunks: 1394
+      uses:
+        tuner: 'PLEX PX-MLT8PE #7'
+        channel-type: GR
+        channel: T23
+
 recording:
   records-dir: /var/lib/mirakc/recording/recorded
   basedir: /var/lib/mirakc/recording
