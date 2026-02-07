@@ -21,26 +21,11 @@ services:
       - mirakc-epg:/var/lib/mirakc/epg
       - ./config.yml:/etc/mirakc/config.yml:ro
       - /mnt/usbhdd/TV-Record:/var/lib/mirakc/recording #<----録画先を指定する>
-      - miraview-html:/var/www/miraview:ro
     environment:
       TZ: Asia/Tokyo
       RUST_LOG: info
-  miraview:
-    image: custom/mirakc
-    container_name: miraview-loader
-    restart: "no"
-    volumes:
-      - miraview-html:/var/www/miraview
-    working_dir: /var/www/miraview
-    environment:
-      MIRAVIEW_VERSION: v0.1.2
-    entrypoint: bash
-    command: -c "curl -L https://github.com/maeda577/miraview/releases/download/$$MIRAVIEW_VERSION/build.tar.gz | tar -zxvf -"
 
 volumes:
   mirakc-epg:
     name: mirakc_epg
     external: true
-  miraview-html:
-    name: miraview_html
-    driver: local

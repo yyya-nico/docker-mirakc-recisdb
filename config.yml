@@ -2,8 +2,8 @@ server:
   addrs:
     - http: 0.0.0.0:40772
   mounts:
-    /miraview:
-      path: /var/www/miraview
+    /mira-tuners:
+      path: /var/www/mira-tuners
       index: index.html
 epg:
   cache-dir: /var/lib/mirakc/epg
