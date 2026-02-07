@@ -28,4 +28,4 @@ services:
 volumes:
   mirakc-epg:
     name: mirakc_epg
-    driver: local
+    external: true
