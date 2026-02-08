@@ -25,6 +25,33 @@ services:
     environment:
       TZ: Asia/Tokyo
       RUST_LOG: info
+  mirakc-timeshift-fs:
+    container_name: mirakc-timeshift-fs
+    image: mirakc/timeshift-fs
+    init: true
+    restart: unless-stopped
+    cap_add:
+      - SYS_ADMIN
+    devices:
+      - /dev/fuse
+    security_opt:
+      - apparmor:unconfined
+    volumes:
+      - mirakc-epg:/var/lib/mirakc/epg
+      - ./config-timeshift.yml:/etc/mirakc/config.yml:ro
+      - /mnt/usbhdd/recording:/var/lib/mirakc/recording #<----録画先を指定する>
+      - /mnt/usbhdd/timeshift:/var/lib/mirakc/timeshift #<----タイムシフトの保存先を指定する>
+      - type: bind
+        source: ./timeshift-fs
+        target: /mnt
+        bind:
+          propagation: rshared
+    environment:
+      TZ: Asia/Tokyo
+      RUST_LOG: info
+      MIRAKC_TIMESHIFT_FS_UID: 1000
+      MIRAKC_TIMESHIFT_FS_GID: 1000
+      MIRAKC_TIMESHIFT_FS_MOUNT_OPTIONS: allow_other
 
 volumes:
   mirakc-epg:
