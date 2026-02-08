@@ -20,7 +20,8 @@ services:
     volumes:
       - mirakc-epg:/var/lib/mirakc/epg
       - ./config.yml:/etc/mirakc/config.yml:ro
-      - /mnt/usbhdd/TV-Record:/var/lib/mirakc/recording #<----録画先を指定する>
+      - /mnt/usbhdd/recording:/var/lib/mirakc/recording #<----録画先を指定する>
+      - /mnt/usbhdd/timeshift:/var/lib/mirakc/timeshift #<----タイムシフトの保存先を指定する>
     environment:
       TZ: Asia/Tokyo
       RUST_LOG: info
