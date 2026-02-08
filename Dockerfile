@@ -8,8 +8,8 @@ RUN BUILD_DEPS="wget curl" && \
 \
     ( \
         cd /tmp && \
-        wget https://github.com/kazuki0824/recisdb-rs/releases/download/1.2.3/recisdb_1.2.3-1_amd64.deb && \
-        apt install -y ./recisdb_1.2.3-1_amd64.deb \
+        wget https://github.com/kazuki0824/recisdb-rs/releases/download/1.2.4/recisdb_1.2.4-1_amd64.deb && \
+        apt install -y ./recisdb_1.2.4-1_amd64.deb \
     ) && \
 \
     ( \
@@ -18,7 +18,7 @@ RUN BUILD_DEPS="wget curl" && \
         curl -L https://github.com/yyya-nico/mira-tuners/releases/download/v1.0.1/build.tar.gz | tar -zxvf - \
     ) && \
 \
-    rm -rf /tmp/recisdb_1.2.3-1_amd64.deb && \
+    rm -rf /tmp/recisdb_1.2.4-1_amd64.deb && \
     apt remove -y $BUILD_DEPS && \
     apt clean && \
     rm -rf /var/lib/apt/lists/*
