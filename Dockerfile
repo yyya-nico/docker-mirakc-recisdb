@@ -15,7 +15,7 @@ RUN BUILD_DEPS="wget curl" && \
     ( \
         mkdir -p /var/www/mira-tuners && \
         cd /var/www/mira-tuners && \
-        curl -L https://github.com/yyya-nico/mira-tuners/releases/download/v1.0.2/build.tar.gz | tar -zxvf - \
+        curl -L https://github.com/yyya-nico/mira-tuners/releases/download/v1.0.3/build.tar.gz | tar -zxvf - \
     ) && \
 \
     rm -rf /tmp/recisdb_1.2.4-1_amd64.deb && \
